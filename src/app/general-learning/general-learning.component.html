@@ -1,8 +1,14 @@
 <section class="card">
   <header class="card-header">
-    <h2 [ngStyle]="{color: useNameIsNull() ? '#7FFFD4' : '#8B008B'}">Login Page</h2>
-    <p *ngIf="!useNameIsNull(); else loggedOut">Hello, {{ username }}!</p>
-    <ng-template #loggedOut>Input your user bellow:</ng-template>
+    <h2 [ngStyle]="{color: userNameIsNull() ? '#7FFFD4' : '#8B008B'}">
+      Login Page
+    </h2>
+    <p *ngIf="!userNameIsNull(); else loggedOut">
+      Hello, {{ username }}!
+    </p>
+    <ng-template #loggedOut>
+      Input your user bellow:
+    </ng-template>
   </header>
   <div class="card-body">
       <h2 class="card-title">Input the user name:</h2>
@@ -12,10 +18,20 @@
         style="margin-right: 1%;"
       >
       <button
-        [disabled]="useNameIsNull()"
-        [ngClass]="(useNameIsNull()? 'btn btn-secondary' : 'btn btn-primary')"
+        [disabled]="userNameIsNull()"
+        [ngClass]="(userNameIsNull()? 'btn btn-secondary' : 'btn btn-primary')"
         (click)="username = ''">
         Reset the Name
       </button>
+      <div *ngIf="findUser()">
+        <h3>Status Users:</h3>
+        <ul
+        class="card-footer"
+        *ngFor="let user of users">
+          <li><strong>User:</strong> {{ user.name }}</li>
+          <li><strong>Status:</strong> {{ user.status }}</li>
+          <li><strong>Score:</strong> {{ user.score }}</li>
+        </ul>
+      </div>
   </div>
 </section>
