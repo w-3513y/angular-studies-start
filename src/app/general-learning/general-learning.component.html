@@ -1,0 +1,20 @@
+<section class="card">
+  <header class="card-header">
+    <div *ngIf="!useNameIsNull()">Hello, {{ username }}!</div>
+  </header>
+  <div class="card-body">
+      <h2 class="card-title">Input the user name:</h2>
+      <input
+        type="text"
+        [(ngModel)]="username"
+        style="margin-right: 1%;"
+      >
+      <button
+        [disabled]="useNameIsNull()"
+        type="button"
+        [ngClass]="(useNameIsNull()? 'btn btn-outline-secondary' : 'btn btn-outline-primary')"
+        (click)="username = ''">
+        Reset the Name
+      </button>
+  </div>
+</section>
