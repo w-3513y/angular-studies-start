@@ -1,6 +1,7 @@
 <section class="card">
   <header class="card-header">
-    <div *ngIf="!useNameIsNull()">Hello, {{ username }}!</div>
+    <p *ngIf="!useNameIsNull(); else loggedOut">Hello, {{ username }}!</p>
+    <ng-template #loggedOut>Input your user bellow:</ng-template>
   </header>
   <div class="card-body">
       <h2 class="card-title">Input the user name:</h2>
