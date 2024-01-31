@@ -13,8 +13,7 @@
       >
       <button
         [disabled]="useNameIsNull()"
-        type="button"
-        [ngClass]="(useNameIsNull()? 'btn btn-outline-secondary' : 'btn btn-outline-primary')"
+        [ngClass]="(useNameIsNull()? 'btn btn-secondary' : 'btn btn-primary')"
         (click)="username = ''">
         Reset the Name
       </button>
