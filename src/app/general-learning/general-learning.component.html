@@ -1,5 +1,6 @@
 <section class="card">
   <header class="card-header">
+    <h2 [ngStyle]="{color: useNameIsNull() ? '#7FFFD4' : '#8B008B'}">Login Page</h2>
     <p *ngIf="!useNameIsNull(); else loggedOut">Hello, {{ username }}!</p>
     <ng-template #loggedOut>Input your user bellow:</ng-template>
   </header>
