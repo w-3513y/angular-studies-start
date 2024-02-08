@@ -8,6 +8,7 @@ import { Recipe } from '../../models/recipe.model';
 })
 export class RecipeListComponent {
   recipes: Recipe[] = [
+    new Recipe('Tomato', 'a fruit', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgyup5b7eON6YfacLRRcFn0rtmssUh0BPS8vAz9aSAgw&s'),
     new Recipe('Tomato', 'a fruit', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgyup5b7eON6YfacLRRcFn0rtmssUh0BPS8vAz9aSAgw&s')
   ];
 
